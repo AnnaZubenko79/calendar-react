@@ -1,27 +1,25 @@
-import React from 'react';
+import React, { Children } from 'react';
 import Hour from '../hour/Hour';
+import { hours } from '../../utils/dateUtils.js';
 
 import './day.scss';
 
-const Day = ({ dataDay, dayEvents }) => {
-  const hours = Array(24)
-    .fill()
-    .map((val, index) => index);
+const Day = ({ children, dataDay, dayEvents, deleteEvent }) => (
+  <div className="calendar__day" data-day={dataDay}>
+    {children}
+    {hours.map(hour => {
+      const hourEvents = dayEvents.filter(event => new Date(event.dateFrom).getHours() === hour);
 
-  return (
-    <div className="calendar__day" data-day={dataDay}>
-      {hours.map((hour) => {
-        //getting all events from the day we will render
-        const hourEvents = dayEvents.filter(
-          (event) => event.dateFrom.getHours() === hour
-        );
-
-        return (
-          <Hour key={dataDay + hour} dataHour={hour} hourEvents={hourEvents} />
-        );
-      })}
-    </div>
-  );
-};
+      return (
+        <Hour
+          key={dataDay + hour}
+          dataHour={hour}
+          hourEvents={hourEvents}
+          deleteEvent={deleteEvent}
+        />
+      );
+    })}
+  </div>
+);
 
 export default Day;

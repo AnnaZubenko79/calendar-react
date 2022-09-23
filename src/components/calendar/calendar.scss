@@ -53,15 +53,26 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  opacity: 0.6;
 
   &__day-name {
     font-size: 14px;
     text-transform: uppercase;
+    &_current {
+      color: #40a36a;
+    }
   }
 
   &__day-number {
     font-size: 22px;
+    line-height: 40px;
+    &_current {
+      height: 40px;
+      width: 40px;
+      color: #fff;
+      background-color: #40a36a;
+      border-radius: 50%;
+      text-align: center;
+    }
   }
 }
 

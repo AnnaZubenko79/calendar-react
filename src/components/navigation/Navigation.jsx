@@ -1,18 +1,14 @@
 import React from 'react';
+import DayLable from './DayLabel.jsx';
 
-import { days } from '../../utils/dateUtils.js';
-
-const Navigation = ({ weekDates }) => {
-  return (
-    <header className="calendar__header">
-      {weekDates.map((dayDate) => (
-        <div className="calendar__day-label day-label">
-          <span className="day-label__day-name">{days[dayDate.getDay()]}</span>
-          <span className="day-label__day-number">{dayDate.getDate()}</span>
-        </div>
-      ))}
-    </header>
-  );
-};
+const Navigation = ({ weekDates }) => (
+  <header className="calendar__header">
+    {weekDates.map(dayDate => (
+      <div key={dayDate.getDate()} className="calendar__day-label day-label">
+        <DayLable key={Math.random().toString(16)} dayDate={dayDate} />
+      </div>
+    ))}
+  </header>
+);
 
 export default Navigation;

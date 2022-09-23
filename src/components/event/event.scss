@@ -1,11 +1,12 @@
 .event {
   position: absolute;
   width: 80%;
-  background-color: cornflowerblue;
+  background-color: #40a36a;
+  opacity: 1;
   z-index: 1;
-  border-radius: 8px;
   padding: 8px;
   color: #fff;
+  min-height: 50px;
 
   &__title {
     width: 100%;
@@ -16,12 +17,18 @@
   }
 
   &:hover {
-    font-weight: bold;
-    background-color: red;
+    opacity: 0.6;
   }
 }
 
 .delete-event-btn {
   cursor: pointer;
   border: none;
+}
+
+.delete-button {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 10px;
 }

@@ -6,6 +6,9 @@
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
+  &:hover {
+    background-color: #a9a9a9;
+  }
 }
 
 .icon-button {
@@ -22,10 +25,11 @@
   align-items: center;
 
   &__content {
-    background: #fff;
+    background: #40a36a;
     padding: 16px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    min-height: 350px;
   }
 }
 

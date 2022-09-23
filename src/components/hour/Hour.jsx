@@ -1,28 +1,28 @@
 import React from 'react';
-
 import Event from '../event/Event';
-import { formatMins } from '../../../src/utils/dateUtils.js';
+import { formatMins } from '../../utils/dateUtils.js';
 
-const Hour = ({ dataHour, hourEvents }) => {
+const Hour = ({ dataHour, hourEvents, deleteEvent }) => {
+  const eventHour = date =>
+    `${new Date(date).getHours()}:${formatMins(new Date(date).getMinutes())}`;
+
   return (
     <div className="calendar__time-slot" data-time={dataHour + 1}>
-      {/* if no events in the current hour nothing will render here */}
-      {hourEvents.map(({ id, dateFrom, dateTo, title }) => {
-        const eventStart = `${dateFrom.getHours()}:${formatMins(
-          dateFrom.getMinutes()
-        )}`;
-        const eventEnd = `${dateTo.getHours()}:${formatMins(
-          dateTo.getMinutes()
-        )}`;
+      {hourEvents.map(({ id, dateFrom, dateTo, title, date }) => {
+        const eventStart = eventHour(dateFrom);
+        const eventEnd = eventHour(dateTo);
 
         return (
           <Event
             key={id}
-            //calculating event height = duration of event in minutes
-            height={(dateTo.getTime() - dateFrom.getTime()) / (1000 * 60)}
-            marginTop={dateFrom.getMinutes()}
+            height={(new Date(dateTo).getTime() - new Date(dateFrom).getTime()) / (1000 * 60)}
+            marginTop={new Date(dateFrom).getMinutes()}
             time={`${eventStart} - ${eventEnd}`}
             title={title}
+            deleteEvent={deleteEvent}
+            id={id}
+            dateFrom={dateFrom}
+            date={date}
           />
         );
       })}
