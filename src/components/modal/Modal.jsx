@@ -1,85 +1,7 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import './modal.scss';
-
-// const Modal = ({ onSubmit, hideModal }) => {
-//   const [event, setEvent] = useState({
-//     title: '',
-//     description: '',
-//     date: '',
-//     startEvent: '',
-//     endEvent: '',
-//   });
-
-//   const { title, description, date, startEvent, endEvent } = event;
-
-//   const onChangeEvent = e => {
-//     const { name, value } = e.target;
-//     setEvent({
-//       ...event,
-//       [name]: value,
-//     });
-//   };
-//   return (
-//     <div className="modal overlay">
-//       <div className="modal__content">
-//         <div className="create-event">
-//           <button className="create-event__close-btn" onClick={hideModal}>
-//             +
-//           </button>
-//           <form className="event-form" onSubmit={e => onSubmit(e, event)}>
-//             <input
-//               type="text"
-//               name="title"
-//               placeholder="Title"
-//               className="event-form__field"
-//               onChange={onChangeEvent}
-//               value={title}
-//             />
-
-//             <div className="event-form__time">
-//               <input
-//                 type="date"
-//                 name="date"
-//                 className="event-form__field"
-//                 onChange={onChangeEvent}
-//                 value={date}
-//               />
-
-//               <input
-//                 type="time"
-//                 name="startEvent"
-//                 className="event-form__field"
-//                 onChange={onChangeEvent}
-//                 value={startEvent}
-//               />
-//               <span>-</span>
-
-//               <input
-//                 type="time"
-//                 name="endEvent"
-//                 className="event-form__field"
-//                 onChange={onChangeEvent}
-//                 value={endEvent}
-//               />
-//             </div>
-
-//             <textarea
-//               name="description"
-//               placeholder="Description"
-//               className="event-form__field"
-//               onChange={onChangeEvent}
-//               value={description}
-//             ></textarea>
-//             <button type="submit" className="event-form__submit-btn">
-//               Create
-//             </button>
-//           </form>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
 
 const Modal = ({ onSubmit, hideModal }) => {
   const [eventData, setEventData] = useState({
@@ -116,7 +38,6 @@ const Modal = ({ onSubmit, hideModal }) => {
               placeholder="Title"
               className="event-form__field"
             />
-
             <div className="event-form__time">
               <input
                 onChange={onChange}
@@ -133,9 +54,7 @@ const Modal = ({ onSubmit, hideModal }) => {
                 onChange={onChange}
                 value={startTime}
               />
-
               <span>-</span>
-
               <input
                 onChange={onChange}
                 value={endTime}
@@ -159,5 +78,10 @@ const Modal = ({ onSubmit, hideModal }) => {
       </div>
     </div>
   );
+};
+
+Modal.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  hideModal: PropTypes.func.isRequired,
 };
 export default Modal;

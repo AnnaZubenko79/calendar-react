@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test": "react-scripts test",
     "start": "webpack serve --mode=development --devtool source-map",
     "build": "webpack --mode=production",
     "lint": "eslint . --ext .js,.jsx"
   },
   "keywords": [],
-  "author": "",
+  "author": "Anna Zubenko",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.15.7",

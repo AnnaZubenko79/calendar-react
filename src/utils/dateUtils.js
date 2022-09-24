@@ -5,7 +5,6 @@ export const getWeekStartDate = date => {
   const monday = new Date(dateCopy.setDate(date.getDate() + difference));
   return new Date(monday.getFullYear(), monday.getMonth(), monday.getDate());
 };
-console.log(getWeekStartDate(new Date('17 September 2022')));
 
 export const generateWeekRange = startDate => {
   const result = [];
@@ -15,7 +14,6 @@ export const generateWeekRange = startDate => {
   }
   return result;
 };
-console.log(generateWeekRange(new Date('17 September 2022')));
 
 export const getDateTime = (date, time) => {
   const [hours, minutes] = time.split(':');
@@ -23,7 +21,6 @@ export const getDateTime = (date, time) => {
   const withMinutes = new Date(new Date(withHours).setMinutes(Number(minutes)));
   return withMinutes;
 };
-console.log(getDateTime(new Date('17 September 2022'), '13:15'));
 
 export const formatMins = mins => (mins < 10 ? `0${mins}` : mins);
 
