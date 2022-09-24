@@ -1,6 +1,6 @@
 import React from 'react';
 import Day from '../day/Day';
-import RedLine from '../redLine/RedLine';
+import RedLine from '../redline/RedLine';
 import './week.scss';
 
 const Week = ({ weekDates, events, deleteEvent }) => (
