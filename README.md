@@ -2,7 +2,7 @@
 
 ![# Calendar-React](project-img1.png)
 
-**[Site link Netlify](https://roaring-gumdrop-108f06.netlify.app)**
+***[Site link Netlify](https://roaring-gumdrop-108f06.netlify.app)***
 
 **_To build project use command:_**
 
