@@ -1,6 +1,6 @@
 # Calendar-React
 
-![# Calendar-React](project-img.png)
+![# Calendar-React](project-img1.png)
 
 **[Site link Netlify](https://roaring-gumdrop-108f06.netlify.app)**
 
