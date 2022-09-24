@@ -6,7 +6,7 @@ const getDistance = () => {
   return `${top}px`;
 };
 
-const Redline = () => {
+const RedLine = () => {
   const [top, setTop] = useState(getDistance());
 
   useEffect(() => {
@@ -28,4 +28,4 @@ const Redline = () => {
   );
 };
 
-export default Redline;
+export default RedLine;
